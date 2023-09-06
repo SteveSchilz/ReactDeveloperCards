@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDom from "react-dom/client";
-import developers from "./developers.js";
+import { developers } from "./developers.js";
 
-function Skill() {
+function Skill(props) {
+  console.log({ props });
   return (
-    <div>
-      <p>Skill1</p>
-      <p>Skill1</p>
-    </div>
+    <p>
+      <span>
+        <b>Skills: </b>
+      </span>
+      {props.skills.map((item) => {
+        return <span>{item} </span>;
+      })}
+    </p>
   );
 }
 
@@ -16,7 +21,8 @@ function Developer(props) {
     <div>
       <img src={props.devPhoto} alt="Developer"></img>
       <h2>{props.devName}</h2>
-      <Skill />
+      <p>{props.devIntro}</p>
+      <Skill skills={props.devSkills} />
     </div>
   );
 }
@@ -25,9 +31,11 @@ function Developer(props) {
  * Our body is a div enclosing a bunch of components
  */
 function App() {
+  console.log(developers);
   return (
     <div className="container">
-      <Developer devName="Steve Schilz" devPhoto="images/SteveSchilzCool.jpg" />
+      <Developer {...developers[0]} />
+      <Developer {...developers[1]} />
     </div>
   );
 }
