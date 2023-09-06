@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDom from "react-dom/client";
+import developers from "./developers.js";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function Skill() {
+  return (
+    <div>
+      <p>Skill1</p>
+      <p>Skill1</p>
+    </div>
+  );
+}
+
+function Developer(props) {
+  return (
+    <div>
+      <img src={props.devPhoto} alt="Developer"></img>
+      <h2>{props.devName}</h2>
+      <Skill />
+    </div>
+  );
+}
+/*
+ * Convention: App (mut be first letter upper case )
+ * Our body is a div enclosing a bunch of components
+ */
+function App() {
+  return (
+    <div className="container">
+      <Developer devName="Steve Schilz" devPhoto="images/SteveSchilzCool.jpg" />
+    </div>
+  );
+}
+
+const root = ReactDom.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
