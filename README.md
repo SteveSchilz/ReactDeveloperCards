@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# React Developer Cards
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React Program that I undertook as part of the Udemy [Ultimate React Course](https://www.udemy.com/course/the-ultimate-react-course/) by Jonas Schmedtman.
+
+We create a "Developer Card" that displays a photo, name, biography, and a list of skills for developers.
+
+React Components:
+
+- App: The App
+- Card: Developer Card
+- Skills: List of skills
+
+Other Features:
+
+- Reads the developer data from a separate "developers.js" file.
+- Generates a random color for background, and a random emoji for the skills list.
+- Some basic HTML styling using index.css file.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app),
+most of the files are boilerplate from that except index.js, index.css, and developers.js
 
 ## Available Scripts
 
